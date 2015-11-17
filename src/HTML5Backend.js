@@ -401,8 +401,8 @@ export default class HTML5Backend {
     if (!this.monitor.isDragging()) {
       // This is probably a native item type we don't understand.
       // Prevent default "drop and blow away the whole document" action.
-      e.preventDefault();
-      e.dataTransfer.dropEffect = 'none';
+      // DISABLED react-dnd-html5-mixed-backend// e.preventDefault();
+      // DISABLED react-dnd-html5-mixed-backend// e.dataTransfer.dropEffect = 'none';
       return;
     }
 
@@ -421,8 +421,8 @@ export default class HTML5Backend {
     } else if (this.isDraggingNativeItem()) {
       // Don't show a nice cursor but still prevent default
       // "drop and blow away the whole document" action.
-      e.preventDefault();
-      e.dataTransfer.dropEffect = 'none';
+      // DISABLED react-dnd-html5-mixed-backend// e.preventDefault();
+      // DISABLED react-dnd-html5-mixed-backend// e.dataTransfer.dropEffect = 'none';
     } else if (this.checkIfCurrentDragSourceRectChanged()) {
       // Prevent animating to incorrect position.
       // Drop effect must be other than 'none' to prevent animation.
