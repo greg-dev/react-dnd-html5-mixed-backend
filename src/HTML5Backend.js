@@ -432,6 +432,11 @@ export default class HTML5Backend {
   }
 
   handleTopDragLeaveCapture(e) {
+    if (!this.monitor.isDragging()) {
+      // This is probably a native item type we don't understand.
+      return;
+    }
+
     if (this.isDraggingNativeItem()) {
       e.preventDefault();
     }
@@ -447,6 +452,11 @@ export default class HTML5Backend {
   }
 
   handleTopDropCapture(e) {
+    if (!this.monitor.isDragging()) {
+      // This is probably a native item type we don't understand.
+      return;
+    }
+
     this.dropTargetIds = [];
     e.preventDefault();
 
@@ -462,6 +472,11 @@ export default class HTML5Backend {
   }
 
   handleTopDrop(e) {
+    if (!this.monitor.isDragging()) {
+      // This is probably a native item type we don't understand.
+      return;
+    }
+
     const { dropTargetIds } = this;
     this.dropTargetIds = [];
 
