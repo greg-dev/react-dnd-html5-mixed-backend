@@ -23,6 +23,11 @@
   "bugs": {
     "url": "https://github.com/gaearon/react-dnd-html5-backend/issues"
   },
+  "files": [
+    "lib/",
+    "LICENSE",
+    "README.md"
+  ],
   "homepage": "https://github.com/gaearon/react-dnd-html5-backend",
   "devDependencies": {
     "babel": "^5.8.23",
