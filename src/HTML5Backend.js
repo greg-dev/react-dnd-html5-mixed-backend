@@ -8,7 +8,7 @@ import * as NativeTypes from './NativeTypes';
 
 export default class HTML5Backend {
   constructor(manager) {
-    this.elSelector = '[class*="Patients__patientsCalendar"]';
+    this.elSelector = '.drag-and-drop-area';
     this.el = null;
     this.actions = manager.getActions();
     this.monitor = manager.getMonitor();
