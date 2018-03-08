@@ -98,7 +98,17 @@ export default class HTML5Backend {
     this.sourceNodes[sourceId] = node;
     this.sourceNodeOptions[sourceId] = options;
 
-    const handleDragStart = (e) => this.handleDragStart(e, sourceId);
+    const handleDragStart = (e) => {
+      if (!e.target.className.match(/allday/)) {
+        // YOLO
+        window.updateDropPositionBasedOnDragPoint = {
+          dragPointDistanceFromTop: e.layerY,
+          draggedElementHeight: e.target.clientHeight,
+        };
+      }
+
+      return this.handleDragStart(e, sourceId);
+    };
     const handleSelectStart = (e) => this.handleSelectStart(e, sourceId);
 
     node.setAttribute('draggable', true);
